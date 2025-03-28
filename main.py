@@ -23,7 +23,7 @@ def setup_vectorstore():
     vectorstore = Chroma(persist_directory="cv_vectordb", embedding_function=embeddings)
     return vectorstore
 
-vectorstore = setup_vectorstore()
+# vectorstore = setup_vectorstore()
 
 # Convert PDF to text
 def extract_text_from_pdf(uploaded_file):
@@ -34,10 +34,19 @@ def extract_text_from_pdf(uploaded_file):
     return text
 
 # Retrieve relevant content from vectorstore
+# def retrieve_from_vectorstore(query):
+#     retriever = vectorstore.as_retriever()
+#     results = retriever.invoke(query)
+#     return "\n".join([doc.page_content for doc in results])
+
+# Lazy Load VectorStore inside the function
 def retrieve_from_vectorstore(query):
+    embeddings = HuggingFaceEmbeddings()
+    vectorstore = Chroma(persist_directory="cv_vectordb", embedding_function=embeddings)  # Load only when needed
     retriever = vectorstore.as_retriever()
     results = retriever.invoke(query)
     return "\n".join([doc.page_content for doc in results])
+
 
 # Get response from Generative AI
 def get_gemini_response(prompt):
