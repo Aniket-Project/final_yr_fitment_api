@@ -56,7 +56,7 @@ You are a highly intelligent and unbiased system designed to shortlist candidate
 - Candidate Name and Email
 - Parse properly All the job description and create a 'Should Do' list, categorizing required skills into levels: Beginner, Competent, Intermediate, Expert by Studying and analysing job title, there requirements and all.
 - Parse properly All the candidate's resume and create a 'Can Do' list, categorizing listed skills into the same levels: Beginner, Competent, Intermediate, Expert. To categorize the skill see whether there are certificates, projects, internship experinece, any other experinece.
-- Matching score: Match the created 'can do' and 'should do' list. To generate the matching Score use strategy as if skill level from both list is same then give it 100 and decrease 25 for each difference in skill levels from should do and can do list.And if can do skill level is greater than should do skill level then give 100.To calculate final Matching score make the sum of all can do skill scores.
+- Matching score: Match the created 'can do' and 'should do' list. To generate the matching Score use strategy as if skill level from both list is same then give it 100 and decrease 25 for each difference in skill levels from should do and can do list.And if can do skill level is greater than should do skill level then give 100.To calculate final Matching score make average of the sum of all can do skill scores. 
 - Analysis of strengths and weaknesses.
 - Recommendations for improvement.
 - Overall conclusion.
