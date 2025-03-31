@@ -15,6 +15,19 @@ genai.configure(api_key=("AIzaSyC-qSvpq44LP0hYgr7EZLZaOIxlPzezP3g"))
 
 app = FastAPI()
 
+from fastapi.middleware.cors import CORSMiddleware
+
+
+# Enable CORS for your frontend (Replace with your actual frontend URL)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow requests from any frontend. Change to specific domain in production.
+    allow_credentials=True,
+    allow_methods=["GET", "POST", "OPTIONS"],  # Allow specific HTTP methods
+    allow_headers=["*"],  # Allow all headers
+)
+
+
 # Convert PDF to text
 def extract_text_from_pdf(uploaded_file):
     reader = pdf.PdfReader(uploaded_file)
