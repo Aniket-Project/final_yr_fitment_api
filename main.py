@@ -19,13 +19,15 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 # Enable CORS for your frontend (Replace with your actual frontend URL)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*http://localhost:3000"],  # Allow requests from any frontend. Change to specific domain in production.
-    allow_credentials=True,
-    allow_methods=["GET", "POST", "OPTIONS"],  # Allow specific HTTP methods
+    allow_origins=["http://localhost:3000"],  # Allow frontend origin
+    allow_credentials=True,  # Allow cookies, authentication
+    allow_methods=["*"],  # Allow all HTTP methods (GET, POST, etc.)
     allow_headers=["*"],  # Allow all headers
 )
+
 
 
 # Convert PDF to text
