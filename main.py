@@ -79,16 +79,17 @@ You are a highly intelligent and unbiased system designed to shortlist candidate
 - **Resume**: {resume_text}
 - **Job Description**: {job_description_text}
 ### Output Format:
-1. Candidate Name and Email
-2. "Can Do" list:
-3. "Should Do" list
-4. Skill Comparison Table:
+1. Candidate Name 
+2. Email
+3. "Can Do" list:
+4. "Should Do" list
+5. Skill Comparison Table:
    | Skill                   | "Can Do" Level  | "Should Do" Level  | Matching Score |
    |--------------------------|----------------|--------------------|----------------|
-5. Overall Matching Score: [Percentage]
-6. Analysis of Strengths and Weaknesses
-7. Recommendations for Improvement
-8. Conclusion on Fitment
+6. Overall Matching Score: [Percentage]
+7. Analysis of Strengths and Weaknesses
+8. Recommendations for Improvement
+9. Conclusion on Fitment
 Generate Accurate Report of the candidate.
 Note: Remove or do not generate the words 'Ok','Okay' and the sentence like 'Okay, I will generate a candidate shortlisting report for' from the generated PDF of the fitment report.
             """
